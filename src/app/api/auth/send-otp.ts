@@ -4,7 +4,7 @@ const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = twilio(accountSid, authToken);
 
-export default async (req, res) => {
+export default async (req:any, res:any) => {
   const { phoneNumber } = req.body;
   const otp = Math.floor(100000 + Math.random() * 900000);
 
