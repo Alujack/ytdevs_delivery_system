@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { auth } from '@/firebase/config';
+import { auth } from '@/libs/firebase/config';
 
 const SignUp: React.FC = () => {
   const [email, setEmail] = useState<string>('');
@@ -12,20 +12,20 @@ const SignUp: React.FC = () => {
   const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
 
   const handleSignUp = async () => {
-    setError(null);  // Reset error state before each attempt
-    setLoading(true); // Set loading state to prevent multiple submissions
+    setError(null); 
+    setLoading(true); 
 
     try {
       const res = await createUserWithEmailAndPassword(email, password);
       console.log({ res });
-      sessionStorage.setItem('user', JSON.stringify(res?.user)); // Save user data in sessionStorage
+      sessionStorage.setItem('user', JSON.stringify(res?.user)); 
       setEmail('');
       setPassword('');
     } catch (e) {
-      setError((e as Error).message); // Set error message from catch
+      setError((e as Error).message); 
       console.error(e);
     } finally {
-      setLoading(false); // Reset loading state
+      setLoading(false); 
     }
   };
 
@@ -57,7 +57,7 @@ const SignUp: React.FC = () => {
           className="w-full p-3 bg-indigo-600 rounded text-white hover:bg-indigo-500"
           disabled={loading} // Disable button while loading
         >
-          {loading ? 'Signing Up...' : 'Sign Up'} {/* Button label changes based on loading state */}
+          {loading ? 'Signing Up...' : 'Sign Up'}
         </button>
       </div>
     </div>

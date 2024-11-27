@@ -2,8 +2,28 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { signInWithGoogle, signOutWithGoogle } from '@/libs/firebase/auth';
+import { cookies } from 'next/headers';
+import { createSession, removeSession } from '@/actions/server-action';
+import { useUserSession } from '@/hooks/use-user-session';
+import { SESSION_COOKIE_NAME } from '@/constants';
 
 const SignIn = () => {
+
+  const handleSignIn = async () => {
+    const userUid = await signInWithGoogle();
+    if (userUid) {
+      await createSession(userUid);
+    }
+  };
+
+  const handleSignOut = async () => {
+    await signOutWithGoogle();
+    await removeSession();
+  };
+
+
+
   return (
     <div className="flex flex-col items-center justify-center h-screen px-4">
       <h2 className="text-3xl font-semibold mb-2">Sign In</h2>
@@ -26,9 +46,9 @@ const SignIn = () => {
       <Link href='auth/facebook' className="text-center w-4/5 py-2 mb-3 border border-gray-300 rounded hover:bg-gray-100 max-w-[40em]">
         Sign in with Facebook
       </Link >
-      <Link href='auth/google' className="text-center w-4/5 py-2 mb-6 border border-gray-300 rounded hover:bg-gray-100 max-w-[40em]">
+      <button onClick={handleSignIn} className="text-center w-4/5 py-2 mb-6 border border-gray-300 rounded hover:bg-gray-100 max-w-[40em]">
         Sign in with Google
-      </Link>
+      </button>
 
       <div className="text-center">
         <div className ='flex flex-row justify-center mt-20'>

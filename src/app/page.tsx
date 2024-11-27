@@ -1,7 +1,8 @@
 'use client'
 import {useAuthState} from 'react-firebase-hooks/auth'
-import {auth} from '@/firebase/config'
+import {auth} from '@/libs/firebase/config'
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { signOut } from 'firebase/auth';
 
 export default function Home() {
@@ -12,10 +13,61 @@ export default function Home() {
   console.log({user})
  
   if (!user && !userSession){
-    router.push('/sign-up')
+    router.push('/auth/login')
   }
+  const items = [
+    {
+      image: "/images/image.jpg",
+      rating: 3.5,
+    },
+    {
+      image: "/images/image.jpg",
+      rating: 3.5,
+    },
+    {
+      image: "/images/image.jpg",
+      rating: 3.5,
+    },
+    {
+      image: "/images/image.jpg",
+      rating: 3.5,
+    },
+  ];
   
 
   return (
-   null)
+   <div className="min-h-screen bg-gray-100">
+      <div className="max-w-4xl mx-auto p-4">
+        {/* Search Bar */}
+        <div className="mb-6">
+          <input
+            type="text"
+            placeholder="Search"
+            className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        {/* Card List */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg shadow-lg overflow-hidden"
+            >
+              <Image
+                src={item.image}
+                alt={`Item ${index + 1}`}
+                width={400}
+                height={200}
+                className="w-full h-40 object-cover"
+              />
+              <div className="p-4 flex items-center justify-between">
+                <span className="text-sm font-medium">{item.rating}</span>
+                <span className="text-yellow-500 text-sm">⭐</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>)
 }

@@ -5,6 +5,7 @@ import { SessionProvider } from 'next-auth/react';
 import Header from "../components/Header";
 import Footer from "@/components/Footer";
 
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -15,8 +16,6 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
-
-
 
 export default function RootLayout({
   children,
