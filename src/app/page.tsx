@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'
 import {useAuthState} from 'react-firebase-hooks/auth'
 import {auth} from '@/firebase/config'
 import { useRouter } from 'next/navigation';
@@ -18,6 +17,5 @@ export default function Home() {
   
 
   return (
-    null
-  )
+   null)
 }
