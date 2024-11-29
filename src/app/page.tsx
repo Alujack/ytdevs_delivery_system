@@ -4,17 +4,23 @@ import {auth} from '@/libs/firebase/config'
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { signOut } from 'firebase/auth';
+import { useEffect } from 'react';
 
 export default function Home() {
   const [user] = useAuthState(auth);
   const router = useRouter()
   const userSession = sessionStorage.getItem('user');
+  useEffect(() => {
+    if (!user && !userSession) {
+      router.push('/auth/login');
+    }
+  }, [user, userSession, router]);
 
-  console.log({user})
- 
-  if (!user && !userSession){
-    router.push('/auth/login')
+  if (!user && !userSession) {
+    // Optionally, you can render a loading state until `router.push` completes
+    return <p>Redirecting...</p>;
   }
+
   const items = [
     {
       image: "/images/image.jpg",

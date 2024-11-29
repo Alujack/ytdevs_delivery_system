@@ -1,7 +1,6 @@
 "use client"
 import localFont from "next/font/local";
 import "./globals.css";
-import { SessionProvider } from 'next-auth/react';
 import Header from "../components/Header";
 import Footer from "@/components/Footer";
 
@@ -23,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <SessionProvider>
+    
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -33,6 +32,6 @@ export default function RootLayout({
         <Footer/>
       </body>
     </html>
-    </SessionProvider>
+    
   );
 }

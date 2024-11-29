@@ -13,7 +13,7 @@ export async function createSession(uid: string) {
     path: '/',
   });
 
-  redirect(HOME_ROUTE);
+  redirect('/');
 }
 
 export async function removeSession() {
