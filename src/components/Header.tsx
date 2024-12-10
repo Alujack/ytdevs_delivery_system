@@ -1,58 +1,65 @@
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
 
-const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
+const Header: React.FC = () => {
   return (
-    <header className=" h-[70px] bg-orange-500 text-black p-4 shadow-md flex items-center justify-between">
-      {/* Logo */}
-      <div className="flex items-center">
-        <Link href="/">
-        
-            <Image
-              src="/images/YTDEvs_icon.png" // Update this with your logo image path
-              alt="Logo"
-              width={70}
-              height={70}
-              className="rounded-full"
-            />
-        
-        </Link>
+    <header className="flex items-center justify-between bg-orange-600 px-2 py-2">
+      <div className="flex items-center space-x-2">
+        <Image src="/images/YTDEvs_icon.png" width={65} height={65} alt='delivery icon'></Image>
       </div>
+      <nav className="flex items-center space-x-6">
+        {/* Each Icon */}
 
-      
-      {/* <div className="text-purple-800">
-        <Image
-              src="/images/language.png"
-              alt="Logo"
-              width={50}
-              height={50}
-              className="rounded-full"
-            />
-      </div> */}
+        <Link href="/" className="flex flex-col justify-center items-center ">
+          <div className="h-7 w-7">
+            <img src="/images/icons/Shopping_cart.png" className="object-cover" />
+          </div>
+          <span>Store</span></Link>
 
-      {/* Hamburger Menu */}
-      <div className="">
-        <button onClick={() => setMenuOpen(!menuOpen)}>
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
 
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="absolute top-16 right-0 bg-orange-500 p-4 shadow-md rounded-md w-48">
-          <Link href="/" className="block p-2 text-black">Home
-          </Link>
-          <Link href="/about" className="block p-2 text-black">About
-          </Link>
-          <Link href="/contact" className="block p-2 text-black">Contact
-          </Link>
-        </div>
-      )}
+        <Link href="/track" className="flex flex-col justify-center items-center  ">
+          <div className="h-7 w-7"><img src="/images/icons/Map.png" className="object-cover" /></div>
+          <span>Map</span></Link>
+
+
+        <Link href="/store_member" className="flex flex-col justify-center items-center  ">
+          <div className="h-7 w-7"><img src="/images/icons/agency.png" className="object-cover" /></div>
+          <span>Store Member</span></Link>
+
+
+        <Link href="/driver-member" className="flex flex-col justify-center items-center  ">
+          <div className="h-7 w-7">
+            <img src="/images/driver.png" className="object-cover" />
+          </div>
+          <span>Driver Member</span></Link>
+        <Link href="/customer" className="flex flex-col justify-center items-center  ">
+          <div className="h-7 w-7"><img src="/images/icons/customer.png" className="object-cover" /></div>
+          <span>Customer</span></Link>
+
+
+        <Link href="/" className="flex flex-col justify-center items-center  ">
+          <div className="h-7 w-7">
+            <img src="/images/icons/inventory.png" className="object-cover" />
+          </div>
+          <span>Inventory</span></Link>
+
+
+        <Link href="/" className="flex flex-col justify-center items-center0 ">
+          <div className="h-7 w-7"><img src="/images/icons/dashboard.png" className="object-cover" /></div>
+          <span>DashBoard</span></Link>
+
+
+        <Link href="/" className="flex flex-col justify-center items-center  ">
+          <div className="h-7 w-7">
+            <img src="/images/icons/Notification.png" className="object-cover" />
+          </div>
+          <span>Notifications</span></Link>
+
+      </nav>
+
+
+
     </header>
   );
 };
