@@ -1,4 +1,3 @@
-// hooks/use-user-session.ts
 
 import { useEffect, useState } from 'react';
 
