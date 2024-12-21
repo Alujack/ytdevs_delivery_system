@@ -16,10 +16,10 @@ export default function Home() {
     }
   }, [user, userSession, router]);
 
-  // if (!user && !userSession) {
-  //   // Optionally, you can render a loading state until `router.push` completes
-  //   return <p>Redirecting...</p>;
-  // }
+  if (!user && !userSession) {
+    // Optionally, you can render a loading state until `router.push` completes
+    return <p>Redirecting...</p>;
+  }
 
   const items = [
     {
