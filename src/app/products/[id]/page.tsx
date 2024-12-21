@@ -28,6 +28,10 @@ export default function ProductDetail(){
             </p>
 
         </div>
+        <div className="flex flex-col justify-between items-center">
+                 <p>Delivery Fee: $1</p>
+                   <p >Total Fee: $6.7 </p>
+                </div>
         <button className="self-center bg-orange-400 py-4 w-[10rem] mt-10 rounded-[15px]">Add to cart</button>
 
     </main>
