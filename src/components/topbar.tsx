@@ -13,6 +13,8 @@ const Topbar: React.FC = () => {
           src="/images/driver.png" 
           alt="Profile"
           className="w-10 h-10 rounded-full object-cover"
+          width={32}
+          height={32}
         />
       </div>
     </div>
