@@ -18,7 +18,7 @@ const SignUp: React.FC = () => {
     try {
       const res = await createUserWithEmailAndPassword(email, password);
       console.log({ res });
-      sessionStorage.setItem('user', JSON.stringify(res?.user)); 
+      //sessionStorage.setItem('user', JSON.stringify(res?.user)); 
       setEmail('');
       setPassword('');
     } catch (e) {

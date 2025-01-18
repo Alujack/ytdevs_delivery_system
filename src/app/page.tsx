@@ -20,30 +20,30 @@ export default function Home() {
 
   const [user] = useAuthState(auth);
   const router = useRouter()
-  const userSession = sessionStorage.getItem('user');
+  // const userSession:any = sessionStorage.getItem('user');
    const [products, setProducts] = useState<FoodItem[]>([])
-  useEffect(() => {
-    if (!user && !userSession) {
-      router.push('/auth/login');
-    }
-  }, [user, userSession, router]);
+  if(true){}
 
-  if (!user && !userSession) {
-    // Optionally, you can render a loading state until `router.push` completes
-    return <p>Redirecting...</p>;
-  }
-
-  
   const navigateTo = (path:string) => {
     router.push(path);
   };
   
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-      <button onClick={() => navigateTo('/page1')}>Go to Page 1</button>
-      <button onClick={() => navigateTo('/page2')}>Go to Page 2</button>
-      <button onClick={() => navigateTo('/page3')}>Go to Page 3</button>
-    </div>
+   <div className="flex flex-col gap-2 p-4 border rounded shadow-lg w-fit bg-white">
+  <button
+    className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+    onClick={() => navigateTo('/admin/admin-dashboard')}
+  >
+    Admin
+  </button>
+  <button
+    className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+    onClick={() => navigateTo('/customer/home')}
+  >
+    Customer
+  </button>
+</div>
+
   );
 }
