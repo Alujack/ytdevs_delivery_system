@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "profile": "/images/company1.png",
+    "owner": "Alice Johnson",
+    "store_id": "ST001",
+    "phone_number": "+1-555-123-4567",
+    "email": "alice.johnson@example.com",
+    "balance": 10234.56,
+    "location": "New York, USA",
+    "action": "Edit"
+  },
+  {
+    "id": 2,
+    "profile": "/images/company2.png",
+    "owner": "Bob Smith",
+    "store_id": "ST002",
+    "phone_number": "+1-555-987-6543",
+    "email": "bob.smith@example.com",
+    "balance": 8745.23,
+    "location": "Los Angeles, USA",
+    "action": "Edit"
+  },
+  {
+    "id": 3,
+    "profile": "/images/company3.png",
+    "owner": "Clara James",
+    "store_id": "ST003",
+    "phone_number": "+1-555-555-0192",
+    "email": "clara.james@example.com",
+    "balance": 4500.00,
+    "location": "Chicago, USA",
+    "action": "Edit"
+  },
+  {
+    "id": 4,
+    "profile": "/images/company4.png",
+    "owner": "David Lee",
+    "store_id": "ST004",
+    "phone_number": "+1-555-321-6548",
+    "email": "david.lee@example.com",
+    "balance": 7699.99,
+    "location": "Houston, USA",
+    "action": "Edit"
+  },
+  {
+    "id": 5,
+    "profile": "/images/company5.png",
+    "owner": "Ella Brown",
+    "store_id": "ST005",
+    "phone_number": "+1-555-444-6789",
+    "email": "ella.brown@example.com",
+    "balance": 12300.75,
+    "location": "Phoenix, USA",
+    "action": "Edit"
+  },
+  {
+    "id": 6,
+    "profile": "/images/company6.png",
+    "owner": "Frank Wilson",
+    "store_id": "ST006",
+    "phone_number": "+1-555-876-5432",
+    "email": "frank.wilson@example.com",
+    "balance": 9056.88,
+    "location": "Philadelphia, USA",
+    "action": "Edit"
+  },
+  {
+    "id": 7,
+    "profile": "/images/company7.png",
+    "owner": "Grace Martin",
+    "store_id": "ST007",
+    "phone_number": "+1-555-654-3210",
+    "email": "grace.martin@example.com",
+    "balance": 15000.00,
+    "location": "San Antonio, USA",
+    "action": "Edit"
+  },
+  {
+    "id": 8,
+    "profile": "/images/company8.png",
+    "owner": "Henry Thompson",
+    "store_id": "ST008",
+    "phone_number": "+1-555-222-3456",
+    "email": "henry.thompson@example.com",
+    "balance": 7564.45,
+    "location": "San Diego, USA",
+    "action": "Edit"
+  },
+  {
+    "id": 9,
+    "profile": "/images/company9.png",
+    "owner": "Ivy Clark",
+    "store_id": "ST009",
+    "phone_number": "+1-555-333-4567",
+    "email": "ivy.clark@example.com",
+    "balance": 6400.00,
+    "location": "Dallas, USA",
+    "action": "Edit"
+  },
+  {
+    "id": 10,
+    "profile": "/images/company10.png",
+    "owner": "Jack Moore",
+    "store_id": "ST010",
+    "phone_number": "+1-555-777-8901",
+    "email": "jack.moore@example.com",
+    "balance": 9800.20,
+    "location": "San Jose, USA",
+    "action": "Edit"
+  }
+]

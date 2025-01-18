@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Earbuds",
+    "price": 49.99,
+    "desc": "High-quality wireless earbuds with noise-canceling and long battery life."
+  },
+  {
+    "id": 2,
+    "name": "Smart Fitness Watch",
+    "price": 89.99,
+    "desc": "A fitness tracker with heart rate monitoring, GPS, and sleep analysis."
+  },
+  {
+    "id": 3,
+    "name": "Portable Blender",
+    "price": 29.99,
+    "desc": "Compact and rechargeable blender for smoothies on the go."
+  },
+  {
+    "id": 4,
+    "name": "4K Action Camera",
+    "price": 129.99,
+    "desc": "Waterproof action camera with 4K resolution and wide-angle lens."
+  },
+  {
+    "id": 5,
+    "name": "Ergonomic Office Chair",
+    "price": 199.99,
+    "desc": "Comfortable office chair with lumbar support and adjustable height."
+  },
+  {
+    "id": 6,
+    "name": "Gaming Mouse",
+    "price": 59.99,
+    "desc": "RGB gaming mouse with customizable buttons and adjustable DPI."
+  },
+  {
+    "id": 7,
+    "name": "Smart LED Light Bulb",
+    "price": 24.99,
+    "desc": "Wi-Fi-enabled LED bulb with customizable colors and smart app control."
+  },
+  {
+    "id": 8,
+    "name": "Portable Power Bank",
+    "price": 39.99,
+    "desc": "Fast-charging power bank with 20,000mAh capacity and dual USB ports."
+  },
+  {
+    "id": 9,
+    "name": "Noise-Canceling Headphones",
+    "price": 149.99,
+    "desc": "Over-ear headphones with superior sound quality and active noise cancellation."
+  },
+  {
+    "id": 10,
+    "name": "Electric Scooter",
+    "price": 399.99,
+    "desc": "Lightweight electric scooter with a top speed of 15 mph and foldable design."
+  }
+]
