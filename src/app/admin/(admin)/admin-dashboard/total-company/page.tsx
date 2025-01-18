@@ -11,6 +11,7 @@ import Image from "next/image"
 import DetailModal from "@/components/models/detail-cutomer";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Company } from "../../company-member/page";
 
 const store = [
   {
@@ -106,7 +107,6 @@ export default function TableDemo() {
         </TableRow>
       </TableFooter> */}
       </Table>
-      <DetailModal isOpen={show} isClose={isClose}/>
       </div>
   )
 }

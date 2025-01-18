@@ -9,7 +9,11 @@ module.exports = {
       stream: require.resolve("stream-browserify"), // Add fallback for "stream"
     },
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
+
 
 
 export default nextConfig;

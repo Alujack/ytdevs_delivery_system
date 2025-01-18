@@ -34,37 +34,16 @@ export default function Home() {
   }
 
   
-  useEffect(()=>{
-    const fetch = async ()=>{
-      const data = await axios.get('https://coding-fairy.com/api/mock-api-resources/express-delivery/products');
-      if(data){
-        setProducts(data.data)
-      }
-       console.log("company data", products);
-    }
-    fetch()
-
-  }, [])
+  const navigateTo = (path:string) => {
+    router.push(path);
+  };
   
 
   return (
-   <div className="min-h-screen bg-gray-100">
-      <div className="max-w-7xl mx-auto p-4">
-  
-        <div className="mb-6 max-w-[300px]">
-          <input
-            type="text"
-            placeholder="Search"
-            className="w-full p-3 h-[35px] rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-
-
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {products.map((item, index) => (
-           <ProductCard product={item}/>
-          ))}
-        </div>
-      </div>
-    </div>)
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+      <button onClick={() => navigateTo('/page1')}>Go to Page 1</button>
+      <button onClick={() => navigateTo('/page2')}>Go to Page 2</button>
+      <button onClick={() => navigateTo('/page3')}>Go to Page 3</button>
+    </div>
+  );
 }
