@@ -1,7 +1,6 @@
 'use client'
 import ProductCard from '@/components/productCardUser';
 import axios from 'axios';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 interface FoodItem  {
@@ -43,7 +42,7 @@ export default function Home() {
 
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {products.map((item, index) => (
+          {products.map((item) => (
            <ProductCard product={item}/>
           ))}
         </div>

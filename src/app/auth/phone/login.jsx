@@ -1,7 +1,7 @@
 
 'use client'
 import React , { useState , useEffect} from 'react';
-import {getAuth , RecaptchaVerifier , signInWithPhoneNumber } from 'firebase/auth'
+import {RecaptchaVerifier , signInWithPhoneNumber } from 'firebase/auth'
 import {auth} from '@/libs/firebase/config'
 import { useRouter } from 'next/navigation';
 

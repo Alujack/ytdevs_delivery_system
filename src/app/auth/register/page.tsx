@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const SignIn = () => {
   return (
@@ -31,7 +32,7 @@ const SignIn = () => {
 
       <div className="text-center">
         <div className ='flex flex-row justify-center mt-20'>
-        <img src="/images/YTDEvs_icon.png" alt="ytdev icon" /></div>
+        <Image src="/images/YTDEvs_icon.png" alt="ytdev icon" /></div>
         <p className="text-sm">
           Have an account?{" "}
           <Link href="/auth/login" className="text-purple-600 font-semibold hover:underline">

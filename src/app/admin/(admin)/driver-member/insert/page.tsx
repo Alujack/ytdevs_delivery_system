@@ -141,7 +141,7 @@ export default function InsertDriver() {
             <select
               name="status"
               value={driver.status}
-              onChange={(e)=>handleChange}
+              onChange={()=>handleChange}
               className="mt-1 p-3 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
               <option value="Active">Active</option>

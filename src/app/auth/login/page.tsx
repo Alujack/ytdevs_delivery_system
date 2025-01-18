@@ -3,11 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { signInWithGoogle, signOutWithGoogle } from '@/libs/firebase/auth';
-import { cookies } from 'next/headers';
 import { createSession, removeSession } from '@/actions/server-action';
-import { useUserSession } from '@/hooks/use-user-session';
-import { SESSION_COOKIE_NAME } from '@/constants';
-
 const SignIn = () => {
 
   const handleSignIn = async () => {

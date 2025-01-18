@@ -18,9 +18,6 @@ const auth = getAuth(app);
 export const setupRecaptcha = (containerId) => {
   const recaptchaVerifier = new RecaptchaVerifier(containerId, {
     size: 'invisible',
-    callback: (response) => {
-      // Handle reCAPTCHA response here
-    },
   }, auth);
 
   recaptchaVerifier.render();

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const FavoriteDrivers = () => {
@@ -34,7 +35,7 @@ const FavoriteDrivers = () => {
             key={driver.id}
             className="flex items-center p-4 bg-white rounded-lg shadow-md"
           >
-            <img
+            <Image
               src={driver.image}
               alt={driver.name}
               className="w-16 h-16 rounded-full border-2 border-green-500 mr-4"

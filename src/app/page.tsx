@@ -1,8 +1,11 @@
 'use client'
 import ProductCard from '@/components/productCardUser';
+import { auth } from '@/libs/firebase/config';
 import axios from 'axios';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 interface FoodItem  {
   id: number;
@@ -15,7 +18,22 @@ interface FoodItem  {
 
 export default function Home() {
 
+  const [user] = useAuthState(auth);
+  const router = useRouter()
+  const userSession = sessionStorage.getItem('user');
    const [products, setProducts] = useState<FoodItem[]>([])
+  useEffect(() => {
+    if (!user && !userSession) {
+      router.push('/auth/login');
+    }
+  }, [user, userSession, router]);
+
+  if (!user && !userSession) {
+    // Optionally, you can render a loading state until `router.push` completes
+    return <p>Redirecting...</p>;
+  }
+
+  
   useEffect(()=>{
     const fetch = async ()=>{
       const data = await axios.get('https://coding-fairy.com/api/mock-api-resources/express-delivery/products');
