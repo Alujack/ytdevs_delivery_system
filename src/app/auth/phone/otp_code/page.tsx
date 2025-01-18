@@ -1,13 +1,14 @@
 "use client"
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 const OTPForm = () => {
     const router = useRouter();
   return (
     <div className="">
-         <button onClick={()=>router.back()} className="pl-6 pt-6 self-start mb-4 text-gray-500 font-[1000]"><div className="w-4 h-4"><img src="/images/less-than-symbol.png" alt="" /></div></button>
+         <button onClick={()=>router.back()} className="pl-6 pt-6 self-start mb-4 text-gray-500 font-[1000]"><div className="w-4 h-4"><Image src="/images/less-than-symbol.png" alt="" /></div></button>
     <div className="flex flex-col items-center  h-screen px-4">
      
       <h2 className="text-2xl font-semibold mb-1">Welcome back!</h2>

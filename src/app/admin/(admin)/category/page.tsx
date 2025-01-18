@@ -10,7 +10,6 @@ import {
 import Image from "next/image"
 import DetailModal from "@/components/models/detail-cutomer"
 import { useEffect, useState } from "react";
-import { useFetchData } from "@/hooks/useFetch";
 import axios from "axios";
 
 

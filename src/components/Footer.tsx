@@ -17,8 +17,6 @@ const Footer = () => {
             
           </Link>
         </div>
-
-        {/* Social Media Links */}
         <div>
           <h3 className="text-lg font-bold">Join Our Social Community</h3>
           <div className="flex space-x-4 mt-2">
@@ -36,8 +34,6 @@ const Footer = () => {
             </a>
           </div>
         </div>
-
-        {/* Call to Action */}
         <div>
           <h3 className="text-lg font-bold">Let's Discuss What's Next</h3>
           <p>Have a order report or a question?<br />We'd love to hear from you.</p>

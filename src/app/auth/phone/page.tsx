@@ -21,7 +21,7 @@ const PhoneForm = () => {
     });
   },[auth , router])
   return (
-    <div className="">
+    <div className="max-w-[400px]">
          <button onClick={()=>router.back()} className="pl-6 pt-6 self-start mb-4 text-gray-500 font-[1000]"><div className="w-4 h-4"><img src="/images/less-than-symbol.png" alt="" /></div></button>
     <div className="flex flex-col items-center  h-screen px-4">
      

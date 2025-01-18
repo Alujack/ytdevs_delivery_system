@@ -8,7 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import Image from "next/image"
-import DetailModal from "@/components/models/detail-cutomer";
+
 import { useState } from "react";
 
 const store = [

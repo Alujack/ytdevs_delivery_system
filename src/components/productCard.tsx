@@ -1,5 +1,3 @@
-// components/ProductCard.js
-import Image from "next/image";
 
 interface Product {
   id: number;

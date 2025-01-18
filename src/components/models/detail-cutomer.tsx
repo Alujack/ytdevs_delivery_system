@@ -1,5 +1,6 @@
 import { Company } from '@/app/admin/(admin)/company-member/page';
-import React, { useState } from 'react';
+import Image from 'next/image';
+import React from 'react';
 
 
 interface ModalProps {
@@ -33,7 +34,7 @@ const DetailModal: React.FC<ModalProps> = ({ isOpen, isClose, data, onUpdate, on
             <div className="text-2xl font-bold text-orange-500 mb-5">Detail</div>
             <div className="flex justify-between">
               <div className="text-center mr-5">
-                <img
+                <Image
                   src={data.profile}
                   alt="Profile"
                   className="w-36 h-36 rounded-lg border border-orange-500"
