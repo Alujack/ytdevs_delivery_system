@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "Profile": "https://example.com/profiles/driver1.jpg",
+    "DriverName": "John Doe",
+    "DriverID": "D001",
+    "PhoneNumber": "+1234567890",
+    "Email": "johndoe@example.com",
+    "Location": "New York, NY",
+    "Balance": 150.75,
+    "Status": "Active"
+  },
+  {
+    "id": 2,
+    "Profile": "https://example.com/profiles/driver2.jpg",
+    "DriverName": "Jane Smith",
+    "DriverID": "D002",
+    "PhoneNumber": "+1234567891",
+    "Email": "janesmith@example.com",
+    "Location": "Los Angeles, CA",
+    "Balance": 300.50,   
+    "Status": "Active"
+  },
+  {
+    "id": 3,
+    "Profile": "https://example.com/profiles/driver3.jpg",
+    "DriverName": "James Brown",
+    "DriverID": "D003",
+    "PhoneNumber": "+1234567892",
+    "Email": "jamesbrown@example.com",
+    "Location": "Chicago, IL",
+    "Balance": 75.00,
+    "Status": "Inactive"
+  },
+  {
+    "id": 4,
+    "Profile": "https://example.com/profiles/driver4.jpg",
+    "DriverName": "Emily Davis",
+    "DriverID": "D004",
+    "PhoneNumber": "+1234567893",
+    "Email": "emilydavis@example.com",
+    "Location": "Houston, TX",
+    "Balance": 200.00,
+    "Status": "Active"
+  },
+  {
+    "id": 5,
+    "Profile": "https://example.com/profiles/driver5.jpg",
+    "DriverName": "Michael Johnson",
+    "DriverID": "D005",
+    "PhoneNumber": "+1234567894",
+    "Email": "michaeljohnson@example.com",
+    "Location": "Phoenix, AZ",
+    "Balance": 50.25,
+    "Status": "Suspended"
+  },
+  {
+    "id": 6,
+    "Profile": "https://example.com/profiles/driver6.jpg",
+    "DriverName": "Sarah Wilson",
+    "DriverID": "D006",
+    "PhoneNumber": "+1234567895",
+    "Email": "sarahwilson@example.com",
+    "Location": "Philadelphia, PA",
+    "Balance": 120.00,
+    "Status": "Active"
+  },
+  {
+    "id": 7,
+    "Profile": "https://example.com/profiles/driver7.jpg",
+    "DriverName": "Robert Martinez",
+    "DriverID": "D007",
+    "PhoneNumber": "+1234567896",
+    "Email": "robertmartinez@example.com",
+    "Location": "San Antonio, TX",
+    "Balance": 90.75,
+    "Status": "Inactive"
+  },
+  {
+    "id": 8,
+    "Profile": "https://example.com/profiles/driver8.jpg",
+    "DriverName": "Jessica Hernandez",
+    "DriverID": "D008",
+    "PhoneNumber": "+1234567897",
+    "Email": "jessicahernandez@example.com",
+    "Location": "San Diego, CA",
+    "Balance": 180.00,
+    "Status": "Active"
+  },
+  {
+    "id": 9,
+    "Profile": "https://example.com/profiles/driver9.jpg",
+    "DriverName": "David Lee",
+    "DriverID": "D009",
+    "PhoneNumber": "+1234567898",
+    "Email": "davidlee@example.com",
+    "Location": "Dallas, TX",
+    "Balance": 230.50,
+    "Status": "Active"
+  },
+  {
+    "id": 10,
+    "Profile": "https://example.com/profiles/driver10.jpg",
+    "DriverName": "Laura White",
+    "DriverID": "D010",
+    "PhoneNumber": "+1234567899",
+    "Email": "laurawhite@example.com",
+    "Location": "San Jose, CA",
+    "Balance": 100.00,
+    "Status": "Active"
+  }
+]

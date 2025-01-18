@@ -1,0 +1,142 @@
+[
+  {
+    "id": 3,
+    "name": "Grilled Salmon",
+    "imageUrl": "/images/foods.png",
+    "rating": 3.5,
+    "restaurant": "Seafood Place"
+  },
+  {
+    "id": 4,
+    "name": "Cheeseburger",
+    "imageUrl": "/images/burger.png",
+    "rating": 4.2,
+    "restaurant": "Burger World"
+  },
+  {
+    "id": 5,
+    "name": "Margherita Pizza",
+    "imageUrl": "/images/pizza.png",
+    "rating": 4.8,
+    "restaurant": "Pizza Corner"
+  },
+  {
+    "id": 6,
+    "name": "Caesar Salad",
+    "imageUrl": "/images/salad.png",
+    "rating": 4.0,
+    "restaurant": "Healthy Bites"
+  },
+  {
+    "id": 7,
+    "name": "Sushi Platter",
+    "imageUrl": "/images/sushi.png",
+    "rating": 4.6,
+    "restaurant": "Sushi House"
+  },
+  {
+    "id": 8,
+    "name": "Chicken Alfredo Pasta",
+    "imageUrl": "/images/pasta.png",
+    "rating": 4.3,
+    "restaurant": "Pasta Paradise"
+  },
+  {
+    "id": 9,
+    "name": "BBQ Ribs",
+    "imageUrl": "/images/ribs.png",
+    "rating": 4.1,
+    "restaurant": "BBQ Pit"
+  },
+  {
+    "id": 10,
+    "name": "Fish Tacos",
+    "imageUrl": "/images/tacos.png",
+    "rating": 3.9,
+    "restaurant": "Taco Town"
+  },
+  {
+    "id": 11,
+    "name": "Pad Thai",
+    "imageUrl": "/images/padthai.png",
+    "rating": 4.5,
+    "restaurant": "Thai Delight"
+  },
+  {
+    "id": 12,
+    "name": "Ramen Bowl",
+    "imageUrl": "/images/ramen.png",
+    "rating": 4.7,
+    "restaurant": "Ramen Spot"
+  },
+  {
+    "id": 13,
+    "name": "Steak",
+    "imageUrl": "/images/steak.png",
+    "rating": 4.4,
+    "restaurant": "Steakhouse 101"
+  },
+  {
+    "id": 14,
+    "name": "Vegetable Stir Fry",
+    "imageUrl": "/images/stirfry.png",
+    "rating": 3.8,
+    "restaurant": "Asian Fusion"
+  },
+  {
+    "id": 15,
+    "name": "Buffalo Wings",
+    "imageUrl": "/images/wings.png",
+    "rating": 4.1,
+    "restaurant": "Wing Shack"
+  },
+  {
+    "id": 16,
+    "name": "Pancakes",
+    "imageUrl": "/images/pancakes.png",
+    "rating": 4.6,
+    "restaurant": "Breakfast Bliss"
+  },
+  {
+    "id": 17,
+    "name": "Beef Tacos",
+    "imageUrl": "/images/tacos.png",
+    "rating": 4.3,
+    "restaurant": "Mexican Fiesta"
+  },
+  {
+    "id": 18,
+    "name": "Fried Rice",
+    "imageUrl": "/images/friedrice.png",
+    "rating": 4.0,
+    "restaurant": "Rice Bowl"
+  },
+  {
+    "id": 19,
+    "name": "Ice Cream Sundae",
+    "imageUrl": "/images/sundae.png",
+    "rating": 4.7,
+    "restaurant": "Dessert Haven"
+  },
+  {
+    "id": 20,
+    "name": "Chocolate Cake",
+    "imageUrl": "/images/cake.png",
+    "rating": 4.9,
+    "restaurant": "Sweet Treats"
+  },
+  {
+    "id": 21,
+    "name": "Chicken Curry",
+    "imageUrl": "/images/curry.png",
+    "rating": 4.2,
+    "restaurant": "Spice Route"
+  },
+  {
+    "id": 22,
+    "name": "French Fries",
+    "imageUrl": "/images/fries.png",
+    "rating": 4.0,
+    "restaurant": "Snack Stop"
+  }
+]
