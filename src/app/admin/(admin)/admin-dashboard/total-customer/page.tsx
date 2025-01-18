@@ -108,7 +108,6 @@ export default function TableDemo() {
         </TableRow>
       </TableFooter> */}
       </Table>
-      <DetailModal isOpen={show} isClose={isClose}/>
       </div>
   )
 }

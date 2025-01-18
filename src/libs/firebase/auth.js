@@ -1,5 +1,4 @@
 import {
-  type User,
   GoogleAuthProvider,
   RecaptchaVerifier,
   signInWithPhoneNumber,
@@ -9,7 +8,7 @@ import {
 } from 'firebase/auth';
 import { auth } from './config';
 
-export function onAuthStateChanged(callback: (authUser: User | null) => void) {
+export function onAuthStateChanged(p0) {
   return _onAuthStateChanged(auth, callback);
 }
 
@@ -36,18 +35,18 @@ export async function signOutWithGoogle() {
   }
 }
 
-export function setupRecaptcha(containerId: string) {
+export function setupRecaptcha(containerId) {
   if (typeof window !== 'undefined' && !window.recaptchaVerifier) {
     window.recaptchaVerifier = new RecaptchaVerifier(
       containerId,
-      { size: 'invisible' },
+      {dispatchEvent:'invisible' },
       auth
     );
   }
   return window.recaptchaVerifier;
 }
 
-export async function sendOTP(phoneNumber: string, recaptchaContainerId: string) {
+export async function sendOTP(phoneNumber, recaptchaContainerId) {
   if (!phoneNumber) {
     throw new Error('Phone number is required');
   }
@@ -66,7 +65,7 @@ export async function sendOTP(phoneNumber: string, recaptchaContainerId: string)
   }
 }
 
-export async function verifyOTP(verificationId: string, otp: string) {
+export async function verifyOTP(verificationId, otp) {
   try {
     const credential = PhoneAuthProvider.credential(verificationId, otp);
     const userCredential = await auth.signInWithCredential(credential);
