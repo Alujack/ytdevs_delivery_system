@@ -1,8 +1,4 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// prisma/schema.prisma
 
 generator client {
   provider = "prisma-client-js"
@@ -12,9 +8,114 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-model User {
-  id    String @id @unique
-  name  String
-  email String @unique
+
+enum UserRole {
+  ADMIN
+  COMPANY
+  DRIVER
+  CUSTOMER
 }
 
+enum DeliveryStatus {
+  PENDING
+  ACCEPTED
+  PICKED_UP
+  IN_TRANSIT
+  DELIVERED
+  CANCELLED
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String?   @unique
+  phone         String?   @unique
+  password      String?
+  role          UserRole
+  isApproved    Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Role-specific relations
+  company       Company?
+  driver        Driver?
+  customer      Customer?
+
+  // Common relations
+  deliveriesAsCustomer Delivery[] @relation("CustomerDeliveries")
+  reviews             Review[]
+}
+
+model Company {
+  id          String    @id @default(cuid())
+  userId      String    @unique
+  user        User      @relation(fields: [userId], references: [id])
+  name        String
+  address     String
+  drivers     Driver[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Driver {
+  id          String    @id @default(cuid())
+  userId      String    @unique
+  user        User      @relation(fields: [userId], references: [id])
+  companyId   String?
+  company     Company?  @relation(fields: [companyId], references: [id])
+  license     String
+  vehicle     String
+  deliveries  Delivery[]
+  reviews     Review[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Customer {
+  id          String    @id @default(cuid())
+  userId      String    @unique
+  user        User      @relation(fields: [userId], references: [id])
+  address     String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String
+  description String?
+  deliveries  Delivery[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Delivery {
+  id          String         @id @default(cuid())
+  customerId  String
+  customer    User           @relation("CustomerDeliveries", fields: [customerId], references: [id])
+  driverId    String?
+  driver      Driver?        @relation(fields: [driverId], references: [id])
+  categoryId  String
+  category    Category       @relation(fields: [categoryId], references: [id])
+  status      DeliveryStatus @default(PENDING)
+  pickupAddr  String
+  dropoffAddr String
+  price       Float
+  distance    Float
+  review      Review?
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+}
+
+model Review {
+  id          String    @id @default(cuid())
+  deliveryId  String    @unique
+  delivery    Delivery  @relation(fields: [deliveryId], references: [id])
+  userId      String
+  user        User      @relation(fields: [userId], references: [id])
+  driverId    String
+  driver      Driver    @relation(fields: [driverId], references: [id])
+  rating      Int
+  comment     String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}

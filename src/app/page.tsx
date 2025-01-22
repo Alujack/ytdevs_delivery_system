@@ -1,49 +1,24 @@
-'use client'
-import ProductCard from '@/components/productCardUser';
-import { auth } from '@/libs/firebase/config';
-import axios from 'axios';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { useSession, signIn } from 'next-auth/react'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
-interface FoodItem  {
-  id: number;
-  name: string;
-  imageUrl: string;
-  rating: number;
-  restaurant: string;
-};
-
-
-export default function Home() {
-
-  const [user] = useAuthState(auth);
+export default function SignInPage() {
+  const { data: session } = useSession()
   const router = useRouter()
-  // const userSession:any = sessionStorage.getItem('user');
-   const [products, setProducts] = useState<FoodItem[]>([])
-  if(true){}
 
-  const navigateTo = (path:string) => {
-    router.push(path);
-  };
-  
+  useEffect(() => {
+    if (session) {
+      const role = session.user.role
+      if (role === 'ADMIN') router.push('/admin/dashboard')
+      else if (role === 'COMPANY') router.push('/company/home')
+      else if (role === 'DRIVER') router.push('/driver/home')
+      else router.push('/user/home')
+    console.log(session)
+    }
+  }, [session, router])
 
   return (
-   <div className="flex flex-col gap-2 p-4 border rounded shadow-lg w-fit bg-white">
-  <button
-    className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
-    onClick={() => navigateTo('/admin/admin-dashboard')}
-  >
-    Admin
-  </button>
-  <button
-    className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
-    onClick={() => navigateTo('/customer/home')}
-  >
-    Customer
-  </button>
-</div>
-
-  );
+    <div>
+    </div>
+  )
 }
