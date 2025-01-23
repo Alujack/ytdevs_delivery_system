@@ -19,11 +19,6 @@ export async function GET() {
 // Create a new category
 export async function POST(req: Request) {
   try {
-    const session = await getServerSession()
-    if (!session?.user || session.user.role !== 'ADMIN') {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-    }
-
     const body = await req.json()
     const { name, description } = body
 
@@ -44,11 +39,6 @@ export async function POST(req: Request) {
 // Update a category
 export async function PUT(req: Request) {
   try {
-    const session = await getServerSession()
-    if (!session?.user || session.user.role !== 'ADMIN') {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-    }
-
     const body = await req.json()
     const { id, name, description } = body
 
@@ -63,9 +53,6 @@ export async function PUT(req: Request) {
 
     return NextResponse.json(category)
   } catch (error) {
-    if (error.code === 'P2025') {
-      return NextResponse.json({ error: 'Category not found' }, { status: 404 })
-    }
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
   }
 }
@@ -73,11 +60,6 @@ export async function PUT(req: Request) {
 // Delete a category
 export async function DELETE(req: Request) {
   try {
-    const session = await getServerSession()
-    if (!session?.user || session.user.role !== 'ADMIN') {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-    }
-
     const { searchParams } = new URL(req.url)
     const id = searchParams.get('id')
 

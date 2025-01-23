@@ -1,23 +1,17 @@
-
 import { useEffect, useState } from 'react';
+import { useSession } from 'next-auth/react';
 
-import { onAuthStateChanged } from '../libs/firebase/auth';
-
-export function useUserSession(InitSession: string | null) {
-  const [userUid, setUserUid] = useState<string | null>(InitSession);
-
+export function useUserSession(initSession: string | null) {
+  const { data: session, status } = useSession();
+  const [userUid, setUserUid] = useState<string | null>(initSession);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(async (authUser:any) => {
-      if (authUser) {
-        setUserUid(authUser.uid);
-      } else {
-        setUserUid(null);
-      }
-    });
-
-    return () => unsubscribe();
-  }, []);
+    if (session?.user?.id) {
+      setUserUid(session.user.id); 
+    } else {
+      setUserUid(null);
+    }
+  }, [session]);
 
   return userUid;
 }

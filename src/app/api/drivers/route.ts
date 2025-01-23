@@ -7,11 +7,11 @@ import { authOptions } from "@/libs/authOptions";
 export async function POST(req: Request) {
   try {
     // Get the current session
-    const session = await getServerSession(authOptions);
+     const session = await getServerSession(authOptions);
     
-    if (!session) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
+    // if (!session) {
+    //   return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    // }
 
     const { license, vehicle } = await req.json();
 
@@ -42,7 +42,7 @@ export async function POST(req: Request) {
       // Update user role
       const user = await prisma.user.update({
         where: {
-          id: session.user.id
+          id: session?.user.id
         },
         data: {
           role: "DRIVER"
@@ -75,5 +75,31 @@ export async function POST(req: Request) {
       { error: "Error registering as driver" },
       { status: 500 }
     );
+  }
+}
+
+
+export async function GET(req: Request) {
+  try {
+    const { searchParams } = new URL(req.url);
+    const userId = searchParams.get('userId');
+
+    if (!userId) {
+      return NextResponse.json({ error: 'userId is required' }, { status: 400 });
+    }
+
+    // Check if the user is a driver
+    const driver = await prisma.driver.findUnique({
+      where: { userId },
+    });
+
+    if (driver) {
+      return NextResponse.json({ isDriver: true, driver });
+    }
+
+    return NextResponse.json({ isDriver: false });
+  } catch (error) {
+    console.error('Error checking if user is a driver:', error);
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }

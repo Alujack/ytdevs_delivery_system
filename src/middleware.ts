@@ -7,31 +7,39 @@ export default withAuth(
     const path = req.nextUrl.pathname;
     const role = token?.role as string;
 
-    // Handle post-authentication redirects based on role
-    if (path === '/') {
-      switch (role) {
-        case 'ADMIN':
-          return NextResponse.redirect(new URL('/admin/admin-dashboard', req.url));
-        case 'COMPANY':
-          return NextResponse.redirect(new URL('/company/home', req.url));
-        case 'DRIVER':
-          return NextResponse.redirect(new URL('/drivers/home', req.url));
-        case 'CUSTOMER':
-          return NextResponse.redirect(new URL('/customer/home', req.url));
-        default:
-          return NextResponse.redirect(new URL('/auth/signin', req.url));
+    // Check if user is authenticated
+    const isAuthenticated = !!token;
+
+    // Redirect to login if not authenticated and not on the login page
+    if ((!isAuthenticated && path !== 'auth/login') || (!isAuthenticated && path !== 'auth/register')) {
+      return NextResponse.redirect(new URL('auth/login', req.url));
+    }
+
+    if (isAuthenticated) {
+      if (
+        (path.startsWith('/admin/admin-dashboard') && role !== 'ADMIN') ||
+        (path.startsWith('/company/home') && role !== 'COMPANY') ||
+        (path.startsWith('/drivers/home') && role !== 'DRIVER') ||
+        (path.startsWith('/customer/home') && role !== 'CUSTOMER')
+      ) {
+        return NextResponse.redirect(new URL('/auth/login', req.url));
       }
     }
 
-    // Protect role-specific routes
-    if (
-      (path.startsWith('/admin') && role !== 'ADMIN') ||
-      (path.startsWith('/company') && role !== 'COMPANY') ||
-      (path.startsWith('/driver') && role !== 'DRIVER') ||
-      (path.startsWith('/user') && role !== 'CUSTOMER')
-    ) {
-      return NextResponse.redirect(new URL('/unauthorized', req.url));
-    }
+    // if (path !== '/wrapper') {
+    //   switch (role) {
+    //     case 'ADMIN':
+    //       return NextResponse.redirect(new URL('/admin/admin-dashboard', req.url));
+    //     case 'COMPANY':
+    //       return NextResponse.redirect(new URL('/company/home', req.url));
+    //     case 'DRIVER':
+    //       return NextResponse.redirect(new URL('/drivers/home', req.url));
+    //     case 'CUSTOMER':
+    //       return NextResponse.redirect(new URL('/customer/home', req.url));
+    //     default:
+    //       return NextResponse.redirect(new URL('/auth/signin', req.url));
+    //   }
+    // }
 
     return NextResponse.next();
   },

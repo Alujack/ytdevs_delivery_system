@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
 module.exports = {
   resolve: {
     fallback: {
-      stream: require.resolve("stream-browserify"), // Add fallback for "stream"
+      stream: require.resolve("stream-browserify"), 
     },
   },
   eslint: {

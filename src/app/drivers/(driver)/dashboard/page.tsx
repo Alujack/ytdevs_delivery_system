@@ -1,9 +1,7 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useUserSession } from '@/hooks/use-user-session';
-import axios from 'axios';
 
 interface FoodItem {
   id: number;
@@ -14,32 +12,10 @@ interface FoodItem {
 }
 
 export default function Home() {
-  const userId = useUserSession('');
   const router = useRouter();
   const [isDriver, setIsDriver] = useState(false);
   const [deliveries, setDeliveries] = useState<any[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
-
-
-   const isDrivers = async () => {
-    try {
-      const response = await axios.get(`/api/drivers?userId=${userId}`);
-      console.log(response.data);
-      setIsDriver(response.data.isDriver);
-    } catch (error) {
-      console.error('Error fetching drivers:', error);
-    }
-  };
-
-  useEffect(() => {
-    if (userId) {  
-      isDrivers();
-    }
-  }, [userId]);
-
-  const handleBecomeDriver = () => {
-    router.push('home/become-driver');
-  };
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -48,12 +24,6 @@ export default function Home() {
           <div className="mb-6 bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold mb-4">Become a Driver</h2>
             <p className="text-gray-600 mb-4">Join our delivery team and start earning today!</p>
-            <button
-              onClick={handleBecomeDriver}
-              className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors"
-            >
-              Register as Driver
-            </button>
           </div>
         )}
 

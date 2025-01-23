@@ -12,9 +12,9 @@ const Topbar = () => {
   const handleLogout = async () => {
     await signOut({
       redirect: true,
-      callbackUrl: '/auth/email'
+      callbackUrl: '/auth/login'
     })
-    router.push('/auth/email')
+    router.push('/auth/login')
   }
 
   return (
