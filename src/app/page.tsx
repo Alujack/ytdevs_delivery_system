@@ -96,7 +96,7 @@ export default function HomePage() {
 
           {/* Illustration */}
           <div className="hidden md:block">
-            <Image
+            <img
               src="https://img.freepik.com/premium-vector/motorbike-delivery-service-icon_658271-1395.jpg?w=996"
               alt="Delivery Illustration"
               className="rounded-lg shadow-2xl"
