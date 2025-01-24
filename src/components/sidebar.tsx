@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import { useRouter } from "next/navigation";
 
@@ -7,6 +9,7 @@ const Sidebar: React.FC = () => {
 
   const menuItems = [
     { label:"Dashboard", route:"/admin/admin-dashboard"},
+    { label:"Categories", route:"/admin/category"},
     { label:"Store", route:"/admin/store"},
     { label: "Company Member", route: "/admin/company-member" },
     { label: "Driver Member", route: "/admin/driver-member" },

@@ -79,7 +79,7 @@ export default function TableDemo() {
           <TableRow>
             <TableHead className="w-[100px] px-10">Profile</TableHead>
             <TableHead>Owner Name</TableHead>
-            <TableHead>Store Id</TableHead>
+            <TableHead>Delivery Number</TableHead>
             <TableHead>Phone Number</TableHead>
             <TableHead>Email</TableHead>
             <TableHead>Location</TableHead>

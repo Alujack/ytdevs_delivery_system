@@ -15,14 +15,14 @@ import axios from "axios";
 
 export interface Company  {
   id:number;
-  profile: string; // Path to the profile image
-  owner: string;   // Name of the owner
-  store_id: string; // Unique store ID
-  phone_number: string; // Contact phone number
-  email: string; // Email address
-  balance: number; // Current account balance
-  location: string; // Store location
-  action: string; // Action field (e.g., "Edit")
+  profile: string; 
+  owner: string;   
+  store_id: string; 
+  phone_number: string;
+  email: string; 
+  balance: number; 
+  location: string; 
+  action: string; 
 };
 
 

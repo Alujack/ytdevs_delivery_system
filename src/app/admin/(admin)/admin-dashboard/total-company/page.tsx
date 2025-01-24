@@ -80,7 +80,7 @@ export default function TableDemo() {
           <TableRow>
             <TableHead className="w-[100px] px-10">Profile</TableHead>
             <TableHead>Owner Name</TableHead>
-            <TableHead>Store Id</TableHead>
+            <TableHead>Company Id</TableHead>
             <TableHead>Phone Number</TableHead>
             <TableHead>Email</TableHead>
             <TableHead>Location</TableHead>
@@ -100,12 +100,6 @@ export default function TableDemo() {
             </TableRow>
           ))}
         </TableBody>
-        {/* <TableFooter>
-        <TableRow>
-          <TableCell colSpan={3}>Total</TableCell>
-          <TableCell className="text-right">$2,500.00</TableCell>
-        </TableRow>
-      </TableFooter> */}
       </Table>
       </div>
   )
