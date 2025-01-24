@@ -56,11 +56,12 @@ const Dashboard: React.FC = () => {
     try {
       const params = new URLSearchParams({ 
         period, 
-        startDate: dateRange.from.toISOString(),
-        endDate: dateRange.to?.toISOString() || '' 
+        startDate:'2025-01-01',
+        endDate: '2025-01-21'
       });
       const response = await fetch(`/api/dashboard/admin?${params.toString()}`);
       const data = await response.json();
+      
       setCounts(data);
     } catch (error) {
       console.error(error);

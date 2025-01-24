@@ -13,8 +13,7 @@ export default function SignInPage() {
       if (role === 'ADMIN') router.push('/admin/admin-dashboard')
       else if (role === 'COMPANY') router.push('/company/home')
       else if (role === 'DRIVER') router.push('/drivers/home')
-      else router.push('/user/home')
-    console.log(session)
+      else router.push('/customer/home')
     }
   }, [session, router])
 

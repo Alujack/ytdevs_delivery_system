@@ -58,13 +58,13 @@ export default function Home() {
       <div className="max-w-7xl mx-auto p-4">
         {!isDriver && (
           <div className="mb-6 bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-semibold mb-4">Become a Driver</h2>
+            <h2 className="text-2xl font-semibold mb-4">Become a Drivers Company</h2>
             <p className="text-gray-600 mb-4">Join our delivery team and start earning today!</p>
             <button
               onClick={handleBecomeDriver}
               className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors"
             >
-              Register as Driver
+              Register as Company
             </button>
           </div>
         )}

@@ -15,16 +15,16 @@ export default withAuth(
       return NextResponse.redirect(new URL('auth/login', req.url));
     }
 
-    if (isAuthenticated) {
-      if (
-        (path.startsWith('/admin/admin-dashboard') && role !== 'ADMIN') ||
-        (path.startsWith('/company/home') && role !== 'COMPANY') ||
-        (path.startsWith('/drivers/home') && role !== 'DRIVER') ||
-        (path.startsWith('/customer/home') && role !== 'CUSTOMER')
-      ) {
-        return NextResponse.redirect(new URL('/auth/login', req.url));
-      }
-    }
+    // if (isAuthenticated) {
+    //   if (
+    //     (path.startsWith('/admin/admin-dashboard') && role !== 'ADMIN') ||
+    //     (path.startsWith('/company/home') && role !== 'COMPANY') ||
+    //     (path.startsWith('/drivers/home') && role !== 'DRIVER') ||
+    //     (path.startsWith('/customer/home') && role !== 'CUSTOMER')
+    //   ) {
+    //     return NextResponse.redirect(new URL('/auth/login', req.url));
+    //   }
+    // }
 
     // if (path !== '/wrapper') {
     //   switch (role) {

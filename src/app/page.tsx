@@ -69,7 +69,7 @@ export default function HomePage() {
                   <h3 className="font-bold text-lg">For Drivers</h3>
                   <p className="text-gray-600">Earn money on your own schedule</p>
                   <button
-                    onClick={() => router.push("/auth/register?role=driver")}
+                    onClick={() => router.push("/become-driver")}
                     className="text-green-600 hover:text-green-800 flex items-center"
                   >
                     Become a Driver <ChevronRight className="ml-2 h-5 w-5" />

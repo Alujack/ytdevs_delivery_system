@@ -88,10 +88,6 @@ export const authOptions: NextAuthOptions = {
           throw new Error('Invalid password');
         }
 
-        if (!user.isApproved && ['COMPANY', 'DRIVER'].includes(user.role)) {
-          throw new Error('Your account is pending approval');
-        }
-
         return {
           id: user.id,
           email: user.email,
@@ -119,16 +115,7 @@ export const authOptions: NextAuthOptions = {
         session.user.role = token.role;
       }
       return session;
-    },
-    async redirect({ url, baseUrl }) {
-      if (url.startsWith('/')) {
-        url = `${baseUrl}${url}`;
-      }
-      if (!url.startsWith('http')) {
-        url = `${baseUrl}${url}`;
-      }
-      return url;
-    },
+    }
   },
   session: {
     strategy: "jwt",

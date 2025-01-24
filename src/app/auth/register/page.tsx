@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import { Truck, User, Lock, Mail, Phone } from 'lucide-react'
+import { useRouter } from 'next/navigation';
 
 enum UserRole {
   CUSTOMER = 'CUSTOMER',
@@ -16,6 +17,7 @@ export default function SignupPage() {
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [role, setRole] = useState<UserRole>(UserRole.CUSTOMER);
   const [error, setError] = useState('');
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,10 +50,10 @@ export default function SignupPage() {
 
       if (!response.ok) {
         const errorData = await response.json();
+       
         throw new Error(errorData.message || 'Registration failed');
       }
-
-      alert('Account created successfully!');
+       router.push('login');
       // Optional: redirect or clear form
     } catch (err: any) {
       setError(err.message || 'An error occurred during registration');
